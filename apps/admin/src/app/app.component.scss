@@ -1,0 +1,88 @@
+// .circle-container__progress { // For conic-gradient approach
+//     stroke-dashoffset: var(--progress-stroke-dashoffset);
+//   }
+  #progress-circle { // For SVG approach
+    background: var(--progress-background);
+        border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+
+  // #progress-circle {
+  //   background: radial-gradient(white 50%, transparent 51%),
+  //     conic-gradient(transparent 0deg 220deg, gainsboro 220deg 360deg),
+  //     conic-gradient(orange 0deg, yellow 90deg, lightgreen 180deg, green);
+  //   border-radius: 50%;
+  //   width: 120px;
+  //   height: 120px;
+  //   // For animations...
+  //   // transition: all 500ms ease-in;
+  //   // will-change: transform;
+  // }
+
+  // .container {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 20px;
+  // }
+  
+  // div:not(.container) {
+  //   width: 120px;
+  //   height: 120px;
+  //   position: relative;
+  // }
+  
+  // p {
+  //   position: absolute;
+  //   color: white;
+  //   font-weight: 400;
+  //   font-size: 14px;
+  //   line-height: 20px;
+  //   left: 5px;
+  //   bottom: 0;
+  //   margin: 0;
+  //   padding: 0;
+  // }
+  
+  // #linear-gradient {
+  //   background: linear-gradient(103deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  // }
+  
+  // #radial-gradient {
+  //   background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  // }
+  
+  // #conic-gradient {
+  //     background: conic-gradient(rgba(34,193,195,1) 0deg, rgba(253,187,45,1) 360deg);
+  // }
+
+  // :root {
+  //   --dot-diameter: 380px;
+  //   --circle-border-width: 2px;
+  //   --default-color: gainsboro;
+  //   --completion-color: seagreen;
+  // }
+  
+  // .circle-container {
+  //   width: var(--dot-diameter);
+  //   height: var(--dot-diameter);
+  //   transform: rotate(-90deg);
+  // }
+  
+  // .circle-container__background {
+  //   fill: none;
+  //   stroke: var(--default-color);
+  //   stroke-width: var(--circle-border-width);
+  // }
+  
+  // .circle-container__progress {
+  //   fill: none;
+  //   stroke-linecap: round;
+  //   stroke: var(--completion-color);
+  //   stroke-dasharray: 100 100;
+  //   stroke-linecap: round;
+  //   stroke-width: var(--circle-border-width);
+  //   // For animations...
+  //   // transition: stroke-dashoffset 1s ease-in-out;
+  //   // will-change: transform;
+  // }

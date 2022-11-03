@@ -1,5 +1,7 @@
 
 ng serve demo  
+ng serve admin 
+ng s dashboard
 # Test
 
 This project was generated using [Nx](https://nx.dev).
