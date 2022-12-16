@@ -55,8 +55,47 @@ setTimeout(() => {
 
   ngOnInit(){
     // this.asdcsd();
-    this.csacsd(1);
-    // this.timer()
+    // this.csacsd(1);
+    // this.timer()s
+
+    // this.fzfcsd();
+  this.timer()
+
+  // this.dfgdrbzd(100)s
+  
+  }
+
+  dfgdrbzd(val){
+    var progress = document.querySelector('.progress') as HTMLElement,
+    totalLength = (progress.offsetWidth * 2) + (progress.offsetHeight * 2);
+console.log(progress.offsetWidth,progress.offsetHeight, totalLength );
+
+  // var btn = document.querySelector('#enter'),
+  //   progressVal = document.querySelector('#progress') as HTMLElement;
+
+  // btn.addEventListener('click', function() {
+    const progressVal = {value: val};
+  const  input = (progressVal.value > 100) ? 100 : progressVal.value;
+  const  borderLen = (input / 100) * 400;
+  let backgroundPos;
+    console.log(borderLen, totalLength);
+  // -500+400 = -100
+  // -500+100 = -400
+    if (borderLen <= progress.offsetWidth) {
+      backgroundPos = 'background-position: ' + (-500 + borderLen) + 'px 0px';
+      progress.setAttribute('style', backgroundPos);
+    }
+    //  else if (borderLen <= (progress.offsetWidth + progress.offsetHeight)) {
+    //   backgroundPos = 'background-position: 0px 0px, 495px ' + (-300 + (borderLen - progress.offsetWidth)) + 'px, 500px 295px, 0px 300px';
+    //   progress.setAttribute('style', backgroundPos);
+    // } else if (borderLen <= (progress.offsetWidth * 2 + progress.offsetHeight)) {
+    //   backgroundPos = 'background-position: 0px 0px, 495px 0px, ' + (500 - (borderLen - progress.offsetWidth - progress.offsetHeight)) + 'px 295px, 0px 300px';
+    //   progress.setAttribute('style', backgroundPos);
+    // } else {
+    //   backgroundPos = 'background-position: 0px 0px, 495px 0px, 0px 295px, 0px ' + (300 - (borderLen - (progress.offsetWidth * 2) - progress.offsetHeight)) + 'px';
+    //   progress.setAttribute('style', backgroundPos);
+    // }
+  // });
 
   }
   // scsad = 0;
@@ -65,8 +104,20 @@ setTimeout(() => {
   // this.timer()
   // }
 
+
+  fzfcsd(questionCounter, MAX_QUESTIONS){
+    const progressBarFull = document.getElementById('progressBarFull') as HTMLElement;
+
+// let questionCounter = 5;
+// const MAX_QUESTIONS = 10;
+
+ progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+console.log(progressBarFull.style.width);
+
+  }
+
   timer(){
-    var sec = 10;
+    var sec = 20;
     var total = 100;
     var fwe = total/sec;
     var asc = 0;
@@ -80,10 +131,11 @@ setTimeout(() => {
         if (sec < 0) {
             clearInterval(timer);
         }
-        let val = total/100;
-        console.log(val, 'total');
-        hbj.csacsd(val);
-        
+        // let val = total/100;
+        console.log(total,sec, 'total');
+        // hbj.csacsd(val);
+        this.fzfcsd(sec,20);
+        // this.dfgdrbzd(total)
     }, 1000);
 }
 }

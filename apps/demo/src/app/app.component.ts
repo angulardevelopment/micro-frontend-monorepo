@@ -26,20 +26,21 @@ export class AppComponent {
     }
     return 'web'
 }
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+
+  }
 
   appID = 424563429; // 
-  server = 'wss://webliveroom424563429-api.coolzcloud.com/ws'; // 
+  server = `wss://webliveroom${this.appID}-api.coolzcloud.com/ws`; // 
   // tokenUrl: string = 'https://wsliveroom-alpha.zego.im:8282/token';
   userID: string = this.getBrow() + '_' + new Date().getTime();
-  // userID: string = '';
   roomID: string = '0001';
   token: string = '';
   streamID: string = '0001';
   playStreamID: string = '0001';
   zg: ZegoExpressEngine = {} as ZegoExpressEngine;
-  localStream: MediaStream = {} as MediaStream;
-  remoteStream: MediaStream = {} as MediaStream;
+  localStream: MediaStream | null = null;
+  remoteStream: MediaStream | null= null;
   isLogin: boolean = false;
   videoCodec: ReadingTypes = localStorage.getItem('VideoCodec') === 'H.264' ? 'H264' : 'VP8';
 
@@ -60,9 +61,9 @@ export class AppComponent {
   publishInfoStreamID: string = "";
   playInfoStreamID: string = "";
 
-  ngOnInit()
+  async ngOnInit()
   {
-    this.createZegoExpressEngineOption();
+    // this.createZegoExpressEngineOption();
   }
 
   async enumDevices() {
@@ -120,9 +121,10 @@ export class AppComponent {
 
     
   }
+
   getAppInfo() {
-    let appID = 424563429; //  Please obtain the corresponding appid from the official website console
-    let server = 'wss://webliveroom424563429-api.coolzcloud.com/ws'; //  Please obtain the corresponding server address from the console on the official website, otherwise the login may fail
+    let appID = this.appID; //  Please obtain the corresponding appid from the official website console
+    let server =  this.server; //  Please obtain the corresponding server address from the console on the official website, otherwise the login may fail
     // var baseURL = window.location.href.match(/.*\/Examples/)[0]
     // get local appID and server
     let appInfo = {}
@@ -193,6 +195,7 @@ export class AppComponent {
    
     
   }
+
   // Step4 Start Publishing Stream
   async startPublishingStream(streamId: string, config: ZegoLocalStreamConfig ) {
     try {
@@ -232,10 +235,10 @@ export class AppComponent {
   clearStream() {
     this.localStream && this.zg.destroyStream(this.localStream);
     //   this.$refs['publishVideo'].srcObject = null;
-    this.localStream = {} as MediaStream;
+    this.localStream = null;
     this.remoteStream && this.zg.destroyStream(this.remoteStream);
     //   this.$refs['playVideo'].srcObject = null;
-    this.remoteStream = {} as MediaStream;
+    this.remoteStream = null;
   }
 
   changeAudioDevices() {

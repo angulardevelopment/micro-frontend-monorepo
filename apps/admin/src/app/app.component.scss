@@ -86,3 +86,52 @@
   //   // transition: stroke-dashoffset 1s ease-in-out;
   //   // will-change: transform;
   // }
+
+
+  :root {
+    background-color: pink;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    // width: 100vw;
+    // height: 100vh;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // max-width: 80rem;
+    // margin: 0 auto;
+    // padding: 2rem;
+}
+
+.container > * {
+    // width: 100%;
+}
+
+#progressBar {
+    // width: 20rem;
+    // height: 4rem;
+    // border: 0.3rem solid purple;
+    // margin-top: 1.5rem;
+    // background-color: #fff;
+}
+
+#progressBarFull {
+    height: 3.4rem;
+    background-color: purple;
+    // width: 0%;
+}
+
+.progress {
+    height: 300px;
+    width: 500px;
+    margin-top: 20px;
+    background: linear-gradient(to right, black 99.99%, transparent), linear-gradient(to bottom, black 99.99%, transparent), linear-gradient(to right, black 99.99%, transparent), linear-gradient(to bottom, black 99.99%, transparent);
+    background-size: 100% 5px, 5px 100%, 100% 5px, 5px 100%;
+    background-repeat: no-repeat;
+    background-position: -500px 0px, 495px -300px, 500px 295px, 0px 300px;
+  }

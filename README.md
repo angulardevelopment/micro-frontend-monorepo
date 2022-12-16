@@ -4,7 +4,7 @@ ng serve admin
 ng s dashboard
 
 admin - progress bar
-demo - zego 
+demo - zego   https://exquisite-youtiao-816f4d.netlify.app/
 gallery - in use
 shell - in use
 dashboard - three
