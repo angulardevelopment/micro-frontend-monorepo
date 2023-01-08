@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { AppComponent, AppComponent2 } from './app.component';
+
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, IMAGE_LOADER, NgOptimizedImage, provideImgixLoader, ImageLoaderConfig } from '@angular/common';
+
 import {GalleryStoreModule} from '../../../../libs/shared/data-store/src/lib/gallery-store/gallery-store.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+
+
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
+    AppComponent2,
+    NgOptimizedImage,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     GalleryStoreModule,
@@ -29,7 +34,18 @@ import { EffectsModule } from '@ngrx/effects';
   ],
   { initialNavigation: 'enabledBlocking' }),
   ],
-  providers: [],
+  providers: [
+    // provideImgixLoader("https://picsum.photos/", {
+    //   ensurePreconnect: true
+    // })
+    // { 
+    //   provide: IMAGE_LOADER, 
+    //   useValue: (config: ImageLoaderConfig) => { 
+    //     // return `https://example.com/images?src=${config.src}&width=${config.width}` 
+    //     return `https://picsum.photos/200/300` 
+    //   } 
+    //   }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

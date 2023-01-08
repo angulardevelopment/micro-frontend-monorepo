@@ -2,7 +2,8 @@
 ng serve demo  
 ng serve admin 
 ng s dashboard
-
+ ng s shell    
+ 
 admin - progress bar
 demo - zego   https://exquisite-youtiao-816f4d.netlify.app/
 gallery - in use
