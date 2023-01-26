@@ -30,12 +30,14 @@ export class AppComponent {
 
   }
 
-  appID = 424563429; // 
+  appID = 0; // 
   server = `wss://webliveroom${this.appID}-api.coolzcloud.com/ws`; // 
   // tokenUrl: string = 'https://wsliveroom-alpha.zego.im:8282/token';
-  userID: string = this.getBrow() + '_' + new Date().getTime();
+  // userID: string = this.getBrow() + '_' + new Date().getTime();
+  userID = 'web_1674732306194';
   roomID: string = '0001';
-  token: string = '';
+  // token = '';
+  token: string = '04AAAAAGPTtJsAEHp2MTNqYXRqaGo0NzRnZjEAsKmLpimsYZV1YYOOiA/uSWnBfpuLKe4H6Z3EnhlB8AAOBY23xBpHZRo+eCiUh0SEqCMMg9zyvW86O3DfnUZg1xtI9qGhwiNFR6SpQflWynHxfJa3nSgpbyQmUVLj6iHl3fi8+sSozlkmHZJ/LjABRwcbxPW6eYSencEIq9xd0AAcqEgn1641toKGU4ChWGWQkSKtEYiP/+E+WX8+B3fvV6KYO0JfLcRx4S5mpzfVzb67';
   streamID: string = '0001';
   playStreamID: string = '0001';
   zg: ZegoExpressEngine = {} as ZegoExpressEngine;
@@ -43,7 +45,6 @@ export class AppComponent {
   remoteStream: MediaStream | null= null;
   isLogin: boolean = false;
   videoCodec: ReadingTypes = localStorage.getItem('VideoCodec') === 'H.264' ? 'H264' : 'VP8';
-
   createSuccessSvgStatus: Boolean = false;
   connectStatus: string = 'DISCONNECTED';
   checkSystemRequireStatus: string = "";
@@ -66,6 +67,7 @@ export class AppComponent {
     // this.createZegoExpressEngineOption();
   }
 
+  // part of step2
   async enumDevices() {
     const deviceInfo = await this.zg.enumDevices();
     this.audioDeviceList = deviceInfo &&
@@ -90,6 +92,7 @@ export class AppComponent {
     this.cameraDevicesVal = this.videoDeviceList[0].deviceID;
   }
 
+  // part of step1
   initEvent() {
     this.zg.on('roomStateUpdate', (roomId: string, state: string) => {
       console.log('initEvent roomStateUpdate', roomId, state);
@@ -151,13 +154,13 @@ export class AppComponent {
     // this.server = appInfo.server;
   }
   
-  // Step1 Create ZegoExpressEngine
+
   createZegoExpressEngine() {
     this.getAppInfo();
     this.zg = new ZegoExpressEngine(this.appID, this.server);
   }
 
-  // Step2 Check system requirements
+
   async checkSystemRequirements() {
     console.log('sdk version is', this.zg.getVersion());
     try {
@@ -186,7 +189,6 @@ export class AppComponent {
     }
   }
 
-  //Step3 Login room
   async loginRoom(roomId: string, userId: string, userName: string, token: string) {
     return this.zg.loginRoom(roomId, token, {
       userID: userId,
@@ -196,7 +198,7 @@ export class AppComponent {
     
   }
 
-  // Step4 Start Publishing Stream
+
   async startPublishingStream(streamId: string, config: ZegoLocalStreamConfig ) {
     try {
       this.localStream = await this.zg.createStream(config);
@@ -207,7 +209,7 @@ export class AppComponent {
     }
   }
 
-  // Step5 Start Play Stream
+
   async startPlayingStream(streamId: string, options: ZegoWebPlayOption  = {}) {
     try {
       this.remoteStream = await this.zg.startPlayingStream(streamId, options);
@@ -256,12 +258,13 @@ export class AppComponent {
   // ==============================================================
   // This part of the code binds the button click event
   // ==============================================================
+    // Step1 Create ZegoExpressEngine
   createZegoExpressEngineOption(): void {
     this.createZegoExpressEngine();
     this.createSuccessSvgStatus = true;
     this.initEvent();
   }
-
+  // Step2 Check system requirements - optional
   async checkSystemRequire() {
     if (!this.zg) return alert('you should create zegoExpressEngine');
     const result = await this.checkSystemRequirements();
@@ -273,6 +276,7 @@ export class AppComponent {
     }
   }
 
+  //Step3 Login room
   async loginRoomOption() {
     if (!this.zg) return alert('you should create zegoExpressEngine');
     try {
@@ -284,6 +288,7 @@ export class AppComponent {
     }
   }
 
+    // Step4 Start Publishing Stream
   async startPublishing() {
     const flag = await this.startPublishingStream(this.streamID, {
       camera: {
@@ -298,6 +303,7 @@ export class AppComponent {
     }
   }
 
+    // Step5 Start Play Stream - subscribing the stream
   async startPlaying() {
     const flag = await this.startPlayingStream(this.playStreamID, {
       video: this.videoCheckStatus,
