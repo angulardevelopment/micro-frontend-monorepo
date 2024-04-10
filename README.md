@@ -1,22 +1,15 @@
+Inside library we have gallery store.  
+ 
+Inside apps we have 
+progress bar in admin app.
+In dashboard we have utilized three.js library and canvas.
+In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
+In gallery and shell app we have used library and ngrx state management.
 
 ng serve demo  
 ng serve admin 
 ng s dashboard
- ng s shell    
- 
-admin - progress bar
-demo - zego   https://exquisite-youtiao-816f4d.netlify.app/
-gallery - in use
-shell - in use
-dashboard - three
-
-
-nx.dev
-nx.app
-nx.dev/angular
-nx.dev/getting-started/intro
-nx.dev/react-tutorial/01-create-application
-nx.dev/community
+ng s shell  
 
 - [Angular](https://angular.io)
   - `ng add @nrwl/angular`
