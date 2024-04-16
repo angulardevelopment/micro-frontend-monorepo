@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 export class GalleryApiService {
 
   constructor(private http: HttpClient) {}
+
   getCatsList() {
       const limit = 20;
       const url = `https://www.reddit.com/r/catswithjobs/.json?limit=${limit}`;

@@ -6,7 +6,7 @@ import * as fromGallery from './state/gallery.reducer';
 import { GalleryEffects } from './state/gallery.effects';
 import { GalleryFacade } from './state/gallery.facade';
 import { GalleryApiService } from '../api/gallery-api.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],

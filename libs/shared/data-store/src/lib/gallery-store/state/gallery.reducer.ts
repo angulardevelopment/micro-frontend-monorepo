@@ -25,7 +25,6 @@ export const initialGalleryState: GalleryState = galleryAdapter.getInitialState(
     // set initial required properties
     loaded: false,
     selectedCats: new Map(),
-
   }
 );
 
