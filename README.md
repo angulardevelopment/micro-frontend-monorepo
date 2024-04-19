@@ -27,6 +27,16 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 - In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
 - In gallery and shell app we have used library and ngrx state management.
 
+### Packages used
+-    "@ngrx/component-store": "~14.0.0",
+-    "@ngrx/effects": "~14.0.0",
+-    "@ngrx/entity": "~14.0.0",
+-    "@ngrx/router-store": "~14.0.0",
+-    "@ngrx/store": "~14.0.0",
+-    "@nrwl/angular": "14.6.1",
+-    "three": "^0.146.0",
+-    "zego-express-engine-webrtc": "^2.19.0",
+
 ### useful commands to run any app
 - ng serve demo  
 - ng serve admin 
