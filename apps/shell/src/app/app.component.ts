@@ -20,5 +20,4 @@ export class AppComponent implements OnInit {
 
 
 
-@Component({ selector: 'my-app', template: `<h1>Hello World!</h1>`,
-standalone: true,}) export class AppComponent2 {}
+

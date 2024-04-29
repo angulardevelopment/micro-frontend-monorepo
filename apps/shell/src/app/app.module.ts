@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent, AppComponent2 } from './app.component';
+import { AppComponent } from './app.component';
 
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -16,7 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
-    AppComponent2,
+    // AppComponent2,
     NgOptimizedImage,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),

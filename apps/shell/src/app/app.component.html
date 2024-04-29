@@ -9,14 +9,11 @@
 
 <div *ngIf="true" class="relative bg-gray-800 my-8">
     <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-      <!-- <img class="w-full h-full object-cover" [ngSrc]="postImage" width="500" height="300" alt="Post Image" /> -->
-          <img rawSrc="https://picsum.photos/200/300" width="200" height="300" priority />
+      <img class="w-full h-full object-cover" [ngSrc]="postImage" width="500" height="300" alt="Post Image" />
 
-          <!-- <picture>
+          <img ngSrc="https://picsum.photos/200/300" width="200" height="300" priority />
+
+          <picture>
             <source srcset="https://picsum.photos/200/300" >
-          </picture> -->
+          </picture>
     </div>
-
-    
-
-    <my-app></my-app>
