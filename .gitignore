@@ -27,6 +27,7 @@ node_modules
 # misc
 /.sass-cache
 /.angular/cache
+/.nx/cache
 /connect.lock
 /coverage
 /libpeerconnection.log

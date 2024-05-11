@@ -22,10 +22,23 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 ### About the app
 - Inside library we have gallery store.  
 - Inside apps we have - 
-- progress bar in admin app.
-- In dashboard we have utilized three.js library and canvas.
-- In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
-- In gallery and shell app we have used library and ngrx state management.
+  - Progress bar in admin app.
+  - In dashboard we have utilized three.js library and canvas.
+  - In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
+  - In gallery and shell app we have used library and ngrx state management.
+
+### Important Links zegocloud
+- [Official Git Repo](https://github.com/zegoim/express-demo-web)
+- [console dashboard link](https://console.zegocloud.com/dashboard)
+- [Sign up here for 10,000 free minutes](https://bit.ly/3MgxQgQ)
+- [Find out more about ZEGOCLOUD](https://bit.ly/3Mpm2cs)
+- [How to build a video call app](https://bit.ly/3EthGPB)
+- [Get 10,000 free mins for the live streaming app](https://bit.ly/3whosTg)
+- [Find out more about ZEGOCLOUD](https://bit.ly/3waseOd)
+- [How to make a live streaming app](https://bit.ly/3WhywpD)
+- [Get ZEGOCLOUD UIKits (low code) for 10,000 free mins](https://bit.ly/3MxQxgw)
+- [Learn more about ZEGOCLOUD video call API](https://bit.ly/45FzjXl)
+- [ZEGOCLOUD Voice & Video Call API](https://bit.ly/3N0fjYk)
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
