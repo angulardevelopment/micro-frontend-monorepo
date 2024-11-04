@@ -1,16 +1,18 @@
-<!-- <ul>
-    <li routerLink="/">Home</li>
-    <li routerLink="/gallery">Gallery</li>
+<ul *ngIf="false">
+  <li routerLink="/">Home</li>
+  <li routerLink="/gallery">Gallery</li>
 </ul>
-<router-outlet></router-outlet> -->
 
-<div *ngIf="true" class="relative bg-gray-800 my-8">
+<router-outlet></router-outlet>
+
+<div *ngIf="false" class="relative bg-gray-800 my-8">
   <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
     <img
-    src="assets/Angular_full_color_logo.svg.png"
-    width="200"
-    height="300"
-  />
+      src="assets/Angular_full_color_logo.svg.png"
+      width="200"
+      height="300"
+      alt="Standard img element"
+    />
     <img
       class="w-full h-full object-cover"
       [ngSrc]="postImage1"
@@ -22,17 +24,63 @@
       ngSrc="assets/Angular_full_color_logo.svg.png"
       width="200"
       height="300"
-      priority
+      loading="lazy"
     />
   </div>
-
-  <div>
-    <img class="w-full h-full object-cover" [ngSrc]="postImage" width="500" height="300" alt="Post Image" />
-
-    <img ngSrc="https://picsum.photos/200/300" width="200" height="300" priority />
-
-    <picture>
-      <source srcset="https://picsum.photos/200/300" >
-    </picture>
-  </div>
 </div>
+
+<div *ngIf="false">
+  <img
+    class="w-full h-full object-cover"
+    [ngSrc]="postImage"
+    width="500"
+    height="300"
+    alt="Post Image"
+  />
+
+  <img
+    ngSrc="https://picsum.photos/200/300"
+    width="200"
+    height="300"
+    priority
+  />
+
+  <picture>
+    <source srcset="https://picsum.photos/200/300" />
+  </picture>
+</div>
+
+<div *ngIf="false">
+<!-- Standard img element with responsive images -->
+<img
+     srcset="
+       path/to/image-small.jpg   600w,
+       path/to/image-medium.jpg 1000w,
+       path/to/image-large.jpg  2000w
+     "
+     sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+     src="assets/Angular_full_color_logo.svg.png"
+     alt="path/to/image.jpg"
+   />
+
+<!-- Using NgOptimizedImage with responsive images -->
+<img
+  sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+  ngSrc="assets/Angular_full_color_logo.svg.png"
+  alt="Description"
+  width="400"
+  height="400"
+/>
+</div>
+<article>
+  <img
+    alt="Optimized Unsplash Image"
+    ngSrc="0*hiSjMcbdqbV35wRI"
+    width="600"
+    height="400"
+    decoding="async"
+    priority
+    sizes="(max-width: 400px) 100vw, (max-width: 1200px) 50vw, 100vw"
+    placeholder
+  />
+</article>
