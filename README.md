@@ -39,6 +39,7 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 - [Get ZEGOCLOUD UIKits (low code) for 10,000 free mins](https://bit.ly/3MxQxgw)
 - [Learn more about ZEGOCLOUD video call API](https://bit.ly/45FzjXl)
 - [ZEGOCLOUD Voice & Video Call API](https://bit.ly/3N0fjYk)
+https://www.zegocloud.com/blog/zegocloud-agora-vs-twilio-vs-vonage-vs-zoom
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",

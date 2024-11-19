@@ -30,8 +30,8 @@ export class AppComponent {
 
   }
 
-  appID = 0; // 
-  server = `wss://webliveroom${this.appID}-api.coolzcloud.com/ws`; // 
+  appID = 0; //
+  server = `wss://webliveroom${this.appID}-api.coolzcloud.com/ws`; //
   // tokenUrl: string = 'https://wsliveroom-alpha.zego.im:8282/token';
   // userID: string = this.getBrow() + '_' + new Date().getTime();
   userID = 'web_1674732306194';
@@ -122,7 +122,7 @@ export class AppComponent {
       }
     });
 
-    
+
   }
 
   getAppInfo() {
@@ -153,7 +153,7 @@ export class AppComponent {
     // this.appID = appInfo.appID;
     // this.server = appInfo.server;
   }
-  
+
 
   createZegoExpressEngine() {
     this.getAppInfo();
@@ -194,8 +194,8 @@ export class AppComponent {
       userID: userId,
       userName
     })
-   
-    
+
+
   }
 
 
@@ -313,7 +313,7 @@ export class AppComponent {
       this.playStreamStatus = true;
     }
   }
-  
+
   async reset() {
     if (!this.zg) {
       return
@@ -333,7 +333,7 @@ export class AppComponent {
     this.audioCheckStatus = false;
   }
 
- 
+
 }
 
 export interface DeviceInfo {
