@@ -27,19 +27,6 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
   - In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
   - In gallery and shell app we have used library and ngrx state management.
 
-### Important Links zegocloud
-- [Official Git Repo](https://github.com/zegoim/express-demo-web)
-- [console dashboard link](https://console.zegocloud.com/dashboard)
-- [Sign up here for 10,000 free minutes](https://bit.ly/3MgxQgQ)
-- [Find out more about ZEGOCLOUD](https://bit.ly/3Mpm2cs)
-- [How to build a video call app](https://bit.ly/3EthGPB)
-- [Get 10,000 free mins for the live streaming app](https://bit.ly/3whosTg)
-- [Find out more about ZEGOCLOUD](https://bit.ly/3waseOd)
-- [How to make a live streaming app](https://bit.ly/3WhywpD)
-- [Get ZEGOCLOUD UIKits (low code) for 10,000 free mins](https://bit.ly/3MxQxgw)
-- [Learn more about ZEGOCLOUD video call API](https://bit.ly/45FzjXl)
-- [ZEGOCLOUD Voice & Video Call API](https://bit.ly/3N0fjYk)
-https://www.zegocloud.com/blog/zegocloud-agora-vs-twilio-vs-vonage-vs-zoom
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
@@ -77,7 +64,7 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 Libraries are shareable across libraries and applications. They can be imported from `@test/mylib`.
 
 `ng g c components/canvas-box --project=dashboard`
-
+ng serve --prod
 Run `ng g component my-component --project=my-app` to generate a new component.
 
 Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
