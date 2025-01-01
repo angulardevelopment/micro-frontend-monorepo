@@ -35,15 +35,15 @@ import { EffectsModule } from '@ngrx/effects';
   { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [
-    provideImgixLoader("https://picsum.photos/", {
-      ensurePreconnect: true
-    }),
-    // { 
-    //   provide: IMAGE_LOADER, 
-    //   useValue: (config: ImageLoaderConfig) => { 
-    //     return `https://example.com/images?src=${config.src}&width=${config.width}` 
-    //     // return `https://picsum.photos/200/300` 
-    //   } 
+    // provideImgixLoader("https://picsum.photos/", {
+    //   ensurePreconnect: true
+    // }),
+    // {
+    //   provide: IMAGE_LOADER,
+    //   useValue: (config: ImageLoaderConfig) => {
+    //     return `https://example.com/images?src=${config.src}&width=${config.width}`
+    //     // return `https://picsum.photos/200/300`
+    //   }
     //   }
     // {
     //   provide: IMAGE_CONFIG,
@@ -52,13 +52,13 @@ import { EffectsModule } from '@ngrx/effects';
     // placeholderResolution: 25
     //   }
     // },
-    {
-      provide: IMAGE_LOADER,
-      useValue: (config: ImageLoaderConfig) => {
-        return `https://cdn-images-1.medium.com/max/400/${config.src}`;
-        // ${config.width} 400
-      },
-    },
+    // {
+    //   provide: IMAGE_LOADER,
+    //   useValue: (config: ImageLoaderConfig) => {
+    //     return `https://cdn-images-1.medium.com/max/400/${config.src}`;
+    //     // ${config.width} 400
+    //   },
+    // },
   ],
   bootstrap: [AppComponent],
 })

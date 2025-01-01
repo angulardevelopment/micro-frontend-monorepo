@@ -9,7 +9,7 @@ import { GalleryFacade } from '../../../../libs/shared/data-store/src';
 export class AppComponent implements OnInit {
   title = 'shell';
   postImage1 = "assets/Angular_full_color_logo.svg.png";
-  postImage = "https://i.picsum.photos/id/556/200/300.jpg?hmac=TLwE28gIMuw2BUTndMuC3hoTlK6FtrE6Mx1UnR2dzu8";
+  // postImage = "https://i.picsum.photos/id/556/200/300.jpg?hmac=TLwE28gIMuw2BUTndMuC3hoTlK6FtrE6Mx1UnR2dzu8";
 
   constructor(private galleryFacade: GalleryFacade) {}
 
