@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector, State } from '@ngrx/store';
 import {
   GALLERY_FEATURE_KEY,
   GalleryState,
@@ -44,7 +44,5 @@ export const getSelected = createSelector(
 
 export const getSelectedCats = createSelector(
   getGalleryState,
-  // (state: State) => state.selectedCats
-  (state: any) => state.selectedCats
-
+  (state: GalleryState) => state.selectedCats
 );

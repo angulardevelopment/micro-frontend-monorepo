@@ -3,6 +3,13 @@
   "sourceRoot": "libs/shared/data-store/src",
   "prefix": "test",
   "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared/data-store"],
+      "options": {
+        "project": "libs/shared/data-store/ng-package.json"
+      }
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/data-store"],
@@ -14,10 +21,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/shared/data-store/**/*.ts",
-          "libs/shared/data-store/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/shared/data-store/**/*.ts", "libs/shared/data-store/**/*.html"]
       }
     }
   },

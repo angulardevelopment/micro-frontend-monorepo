@@ -5,6 +5,7 @@ import { map } from 'rxjs';
 import * as GalleryActions from './gallery.actions';
 import * as GalleryFeature from './gallery.reducer';
 import * as GallerySelectors from './gallery.selectors';
+import { GalleryEntity } from './gallery.models';
 
 @Injectable()
 export class GalleryFacade {
@@ -16,7 +17,9 @@ export class GalleryFacade {
   allGallery$ = this.store.pipe(select(GallerySelectors.getAllGallery));
   selectedGallery$ = this.store.pipe(select(GallerySelectors.getSelected));
   selectedCats$ = this.store.pipe(select(GallerySelectors.getSelectedCats));
-  constructor(private readonly store: Store) {}
+  constructor(private readonly store: Store) {
+    console.log('GalleryFacade created');
+  }
 
   /**
    * Use the initialization action to perform one
@@ -25,12 +28,12 @@ export class GalleryFacade {
   init() {
     this.store.dispatch(GalleryActions.initGallery());
   }
-  isCatSelected(catId: any) {
+  isCatSelected(catId: string) {
     return this.selectedCats$.pipe(
         map((selectedCats) => selectedCats.has(catId))
     );
 }
-toggleSelectCat(cat: any) {
+toggleSelectCat(cat:GalleryEntity) {
     this.store.dispatch(GalleryActions.toggleSelectCat({ cat }));
 }
 }

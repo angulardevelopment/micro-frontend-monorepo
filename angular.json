@@ -3,7 +3,6 @@
   "version": 2,
   "projects": {
     "admin": "apps/admin",
-    "admin-e2e": "apps/admin-e2e",
     "dashboard": "apps/dashboard",
     "dashboard-e2e": "apps/dashboard-e2e",
     "demo": "apps/demo",

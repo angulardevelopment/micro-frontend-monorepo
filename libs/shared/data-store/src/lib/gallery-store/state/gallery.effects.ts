@@ -7,9 +7,13 @@ import { GalleryApiService } from '../../api/gallery-api.service';
 import * as GalleryActions from './gallery.actions';
 import * as GalleryFeature from './gallery.reducer';
 
+import { catchError, mergeMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 @Injectable()
 export class GalleryEffects {
-  constructor(private readonly actions$: Actions, private galleryApiService: GalleryApiService) {}
+  constructor(private readonly actions$: Actions,
+    private galleryApiService: GalleryApiService) {}
   // constructor(@Inject('') private readonly actions$: Actions,  private galleryApiService: GalleryApiService){}
 
   // init$ = createEffect(() =>
@@ -34,5 +38,19 @@ export class GalleryEffects {
   //   )
   // );
 
+  getCatsList$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(GalleryActions.initGallery),
+      mergeMap(() =>
+        this.galleryApiService.getCatsList().pipe(
+          map(cats => GalleryActions.loadGallerySuccess({ gallery: cats })),
+          catchError(error => of(GalleryActions.loadGalleryFailure({ error })))
+        )
+      )
+    )
+  );
 
 }
+
+
+

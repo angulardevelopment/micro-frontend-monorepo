@@ -7,9 +7,12 @@ import { map } from 'rxjs';
 })
 export class GalleryApiService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log('GalleryApiService created');
+  }
 
   getCatsList() {
+    console.log('getCatsList called');
       const limit = 20;
       const url = `https://www.reddit.com/r/catswithjobs/.json?limit=${limit}`;
       return this.http.get(url).pipe(
@@ -20,6 +23,7 @@ export class GalleryApiService {
                   const id = res.data.id;
                   const url = res.data.preview?.images[0]?.resolutions[2]?.url;
                   if (url) {
+                    console.log(cats, url)
                       cats.push({
                           id,
                           title,

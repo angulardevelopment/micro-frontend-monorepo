@@ -20,13 +20,7 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 
 ### About the app
-- Inside library we have gallery store.  
-- Inside apps we have - 
-  - Progress bar in admin app.
-  - In dashboard we have utilized three.js library and canvas.
-  - In demo app we have utilized zegocloud. https://exquisite-youtiao-816f4d.netlify.app/  
-  - In gallery and shell app we have used library and ngrx state management.
-
+it is a workspace which has multiple apps and library
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
@@ -43,6 +37,7 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 - ng serve admin 
 - ng s dashboard
 - ng s shell  
+ng s gallery
 
 - Below are some plugins which you can add to your workspace:
 - [Angular](https://angular.io)
@@ -68,6 +63,7 @@ ng serve --prod
 Run `ng g component my-component --project=my-app` to generate a new component.
 
 Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+update defaultproject whichever app want to generate build
 
 ## Running unit tests
 

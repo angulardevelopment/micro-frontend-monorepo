@@ -10,7 +10,7 @@ export interface GalleryState extends EntityState<GalleryEntity> {
   selectedId?: string | number; // which Gallery record has been selected
   loaded: boolean; // has the Gallery list been loaded
   error?: string | null; // last known error (if any)
-  selectedCats: Map<string, any>;
+  selectedCats: Map<string, GalleryEntity>;
 }
 
 export interface GalleryPartialState {

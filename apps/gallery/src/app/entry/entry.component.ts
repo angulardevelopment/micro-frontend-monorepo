@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { GalleryFacade } from '@test/shared/data-store';
 import { GalleryFacade } from '../../../../../libs/shared/data-store/src';
+import { GalleryEntity } from 'libs/shared/data-store/src/lib/gallery-store/state/gallery.models';
 
 
 @Component({
@@ -10,16 +11,24 @@ import { GalleryFacade } from '../../../../../libs/shared/data-store/src';
 })
 export class EntryComponent {
 
-  cats = this.galleryFacade.allGallery$ as any;
+  cats = this.galleryFacade.allGallery$;
   selectedCats = this.galleryFacade.selectedCats$;
 
-  constructor(private galleryFacade: GalleryFacade) { }
+  constructor(private galleryFacade: GalleryFacade) {
+    this.cats.subscribe((cats) => {
+      console.log('cats', cats);
+    });
+  }
 
-  toggleSelectCat(cat: any) {
+  ngOnInit() {
+      this.galleryFacade.init();
+  }
+
+  toggleSelectCat(cat: GalleryEntity) {
     this.galleryFacade.toggleSelectCat(cat);
   }
 
-  isSelected(catId: any) {
+  isSelected(catId: string) {
     return this.galleryFacade.isCatSelected(catId);
   }
 

@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { GalleryEntity } from './gallery.models';
 
-export const initGallery = createAction('[Gallery Page] Init');
+export const initGallery = createAction('[Gallery Page] Init Load Cats List');
 
 export const loadGallerySuccess = createAction(
   '[Gallery/API] Load Gallery Success',

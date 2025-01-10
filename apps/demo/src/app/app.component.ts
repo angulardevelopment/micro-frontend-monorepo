@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ZegoExpressEngine } from 'zego-express-engine-webrtc';
 import { ZegoLocalStreamConfig, ZegoWebPlayOption } from 'zego-express-engine-webrtc/sdk/code/zh/ZegoExpressEntity.web';
+import { DeviceInfo, ReadingTypes } from './models';
 
 @Component({
   selector: 'test-root',
@@ -9,62 +10,45 @@ import { ZegoLocalStreamConfig, ZegoWebPlayOption } from 'zego-express-engine-we
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'demo';
-
-  getBrow = () => {
-    const result: any = function () {
-        var u = navigator.userAgent;
-        return {
-            // ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
-            ios: u.indexOf('iPhone') > -1 || u.indexOf('iPad') > -1,
-            android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
-        };
-    }()
-
-    for (let brow in result) {
-        if (result[brow]) return brow
-    }
-    return 'web'
-}
   constructor(public http: HttpClient) {
-
   }
 
+  title = 'demo';
   appID = 0; //
   server = `wss://webliveroom${this.appID}-api.coolzcloud.com/ws`; //
   // tokenUrl: string = 'https://wsliveroom-alpha.zego.im:8282/token';
   // userID: string = this.getBrow() + '_' + new Date().getTime();
   userID = 'web_1674732306194';
-  roomID: string = '0001';
+  roomID = '0001';
   // token = '';
-  token: string = '04AAAAAGPTtJsAEHp2MTNqYXRqaGo0NzRnZjEAsKmLpimsYZV1YYOOiA/uSWnBfpuLKe4H6Z3EnhlB8AAOBY23xBpHZRo+eCiUh0SEqCMMg9zyvW86O3DfnUZg1xtI9qGhwiNFR6SpQflWynHxfJa3nSgpbyQmUVLj6iHl3fi8+sSozlkmHZJ/LjABRwcbxPW6eYSencEIq9xd0AAcqEgn1641toKGU4ChWGWQkSKtEYiP/+E+WX8+B3fvV6KYO0JfLcRx4S5mpzfVzb67';
-  streamID: string = '0001';
-  playStreamID: string = '0001';
+  token = '04AAAAAGPTtJsAEHp2MTNqYXRqaGo0NzRnZjEAsKmLpimsYZV1YYOOiA/uSWnBfpuLKe4H6Z3EnhlB8AAOBY23xBpHZRo+eCiUh0SEqCMMg9zyvW86O3DfnUZg1xtI9qGhwiNFR6SpQflWynHxfJa3nSgpbyQmUVLj6iHl3fi8+sSozlkmHZJ/LjABRwcbxPW6eYSencEIq9xd0AAcqEgn1641toKGU4ChWGWQkSKtEYiP/+E+WX8+B3fvV6KYO0JfLcRx4S5mpzfVzb67';
+  streamID = '0001';
+  playStreamID = '0001';
   zg: ZegoExpressEngine = {} as ZegoExpressEngine;
   localStream: MediaStream | null = null;
   remoteStream: MediaStream | null= null;
-  isLogin: boolean = false;
+  isLogin = false;
   videoCodec: ReadingTypes = localStorage.getItem('VideoCodec') === 'H.264' ? 'H264' : 'VP8';
-  createSuccessSvgStatus: Boolean = false;
-  connectStatus: string = 'DISCONNECTED';
-  checkSystemRequireStatus: string = "";
+  createSuccessSvgStatus = false;
+  connectStatus = 'DISCONNECTED';
+  checkSystemRequireStatus = "";
   audioDeviceList: DeviceInfo[] = [];
   videoDeviceList: DeviceInfo[] = [];
   microphoneDevicesVal  = 0;
-  cameraDevicesVal: string = "";
-  cameraCheckStatus: boolean = true;
-  microphoneCheckStatus: boolean = true;
-  publishStreamStatus: boolean = false;
-  mirrorVal: string = "none";
-  playStreamStatus: boolean = false;
-  videoCheckStatus: boolean = true;
-  audioCheckStatus: boolean = false;
-  publishInfoStreamID: string = "";
-  playInfoStreamID: string = "";
+  cameraDevicesVal = "";
+  cameraCheckStatus = true;
+  microphoneCheckStatus = true;
+  publishStreamStatus = false;
+  mirrorVal = "none";
+  playStreamStatus = false;
+  videoCheckStatus = true;
+  audioCheckStatus = false;
+  publishInfoStreamID = "";
+  playInfoStreamID = "";
 
   async ngOnInit()
   {
-    // this.createZegoExpressEngineOption();
+    this.createZegoExpressEngineOption();
   }
 
   // part of step2
@@ -126,11 +110,11 @@ export class AppComponent {
   }
 
   getAppInfo() {
-    let appID = this.appID; //  Please obtain the corresponding appid from the official website console
-    let server =  this.server; //  Please obtain the corresponding server address from the console on the official website, otherwise the login may fail
+    const appInfo = {appID: this.appID, server: this.server}
+    // let appID = this.appID; //  Please obtain the corresponding appid from the official website console
+    // let server =  this.server; //  Please obtain the corresponding server address from the console on the official website, otherwise the login may fail
     // var baseURL = window.location.href.match(/.*\/Examples/)[0]
     // get local appID and server
-    let appInfo = {}
     // if (!appID || !server) {
     //   try {
     //     const appInfoStr = localStorage.getItem("app_info") as string;
@@ -144,12 +128,8 @@ export class AppComponent {
     //     // window.location.href = `${baseURL}/DebugAndConfig/InitSettings/index.html${location.search}`
     //   }
     // } else {
-      localStorage.setItem("app_info", JSON.stringify({
-        appID,
-        server
-      }))
+      localStorage.setItem("app_info", JSON.stringify(appInfo))
     // }
-    appInfo = {appID, server}
     // this.appID = appInfo.appID;
     // this.server = appInfo.server;
   }
@@ -336,10 +316,4 @@ export class AppComponent {
 
 }
 
-export interface DeviceInfo {
-  deviceID:string,
-  deviceName:string
-}
-
-export type ReadingTypes = 'H264' | 'VP8';
 
