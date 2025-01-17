@@ -4,6 +4,12 @@ demo
 gallery
 shell
 
+- ng serve demo  
+- ng serve admin 
+- ng s dashboard
+- ng s shell  
+ng s gallery
+
 shared data-store
 ngsrc - shell
 - Inside library we have gallery store.  

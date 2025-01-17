@@ -33,11 +33,6 @@ it is a workspace which has multiple apps and library
 -    "zego-express-engine-webrtc": "^2.19.0",
 
 ### useful commands to run any app
-- ng serve demo  
-- ng serve admin 
-- ng s dashboard
-- ng s shell  
-ng s gallery
 
 - Below are some plugins which you can add to your workspace:
 - [Angular](https://angular.io)

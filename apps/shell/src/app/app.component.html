@@ -7,39 +7,41 @@
 
 <div *ngIf="true" class="relative bg-gray-800 my-8">
   <div class="h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-    <img
+    <!-- <img
       [src]="postImage1"
       width="200"
       height="300"
       alt="Standard img element"
-    />
+    /> -->
     <img
       [ngSrc]="postImage1"
       width="200"
       height="300"
-      alt="Post Image"
+      alt="optimized Image"
     />
-    <img
+    <!-- <img
       ngSrc="assets/Angular_full_color_logo.svg.png"
       width="200"
       height="300"
-    />
+      alt="optimized Image"
+    /> -->
   </div>
 </div>
 
-<div *ngIf="true">
+<div *ngIf="false">
   <img
     class="w-full h-full object-cover"
     [ngSrc]="postImage1"
     width="500"
     height="300"
-    alt="Post Image"
+    alt="optimized Image"
   />
 
   <img
     ngSrc="https://picsum.photos/200/300"
     width="200"
     height="300"
+    alt="optimized Image"
     priority
   />
 
@@ -49,7 +51,6 @@
 </div>
 
 <div *ngIf="false">
-<!-- Standard img element with responsive images -->
 <img
      srcset="
        path/to/image-small.jpg   600w,
@@ -58,20 +59,19 @@
      "
      sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
      src="assets/Angular_full_color_logo.svg.png"
-     alt="path/to/image.jpg"
+     alt="Standard img element with responsive images"
    />
 
-<!-- Using NgOptimizedImage with responsive images -->
 <img
   sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
   ngSrc="assets/Angular_full_color_logo.svg.png"
-  alt="Description"
+  alt="Using NgOptimizedImage with responsive images"
   width="400"
   height="400"
 />
 </div>
 
-<!-- <article>
+<article *ngIf="false">
   <img
     alt="Optimized Unsplash Image"
     ngSrc="0*hiSjMcbdqbV35wRI"
@@ -82,4 +82,4 @@
     sizes="(max-width: 400px) 100vw, (max-width: 1200px) 50vw, 100vw"
     placeholder
   />
-</article> -->
+</article>
