@@ -1,0 +1,26 @@
+/* General button styles */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007BFF;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .btn-hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+  }
+  
+  /* Active button state */
+  .btn-active {
+    background-color: #004085; /* Even darker blue when active */
+    border-color: #004085;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for active state */
+  }
+  

@@ -5,22 +5,15 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/admin",
         "index": "apps/admin/src/index.html",
         "main": "apps/admin/src/main.ts",
         "polyfills": "apps/admin/src/polyfills.ts",
         "tsConfig": "apps/admin/tsconfig.app.json",
-        "assets": [
-          "apps/admin/src/favicon.ico",
-          "apps/admin/src/assets"
-        ],
-        "styles": [
-          "apps/admin/src/styles.css"
-        ],
+        "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
+        "styles": ["apps/admin/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -58,6 +51,7 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+    "options": {"forceEsbuild":true},
       "configurations": {
         "production": {
           "browserTarget": "admin:build:production"
@@ -77,20 +71,44 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/admin/**/*.ts",
-          "apps/admin/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/admin/**/*.ts", "apps/admin/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/admin"
-      ],
+      "outputs": ["coverage/apps/admin"],
       "options": {
         "jestConfig": "apps/admin/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/admin/.storybook",
+        "browserTarget": "admin:build",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/admin",
+        "configDir": "apps/admin/.storybook",
+        "browserTarget": "admin:build",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     }
   },

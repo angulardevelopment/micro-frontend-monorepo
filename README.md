@@ -20,7 +20,7 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 
 ### About the app
-it is a workspace which has multiple apps and library
+it is a workspace which has multiple apps and library. Nx project
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
