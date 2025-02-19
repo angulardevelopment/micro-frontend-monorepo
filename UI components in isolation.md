@@ -10,9 +10,15 @@ Customizable UI
 Addon Ecosystem
 Seamless Integration with third-party tools
 
+npm install -g nx
+npm install -g @nrwl/cli
+npx create-nx-workspace
+
 npx storybook init  - For normal project use this command
 
 nx g @nx/angular:storybook-configuration - For nx monorepo projects
+nx g @nx/angular:storybook-configuration project-name
+
 nx g @nrwl/angular:storybook-configuration - For nrwl monorepo projects
 
 nx run storybook
@@ -23,14 +29,3 @@ After adding this It will automatically update angular.json if it is a monorepo 
 Storybook runs alongside your app in development mode. It helps you build UI components isolated from the business logic and context of your app
 
 Mainly we add in monorepos (nx)
-
-nx g @nx/angular:storybook-configuration project-name
-
-npm install -g nx
-npm install -g @nrwl/cli
-npx create-nx-workspace
-
-
-
-
-

@@ -54,7 +54,7 @@ export default {
 If your codebase or dependencies are ESM, use import rather than require().
 Check your Node.js version and consider using "type": "module" in package.json if your project is ESM-based.
 
-    "options": {"forceEsbuild":true},
+    "options": {"forceEsbuild":true}, -> angular.json
  under serve section angular > 16
 
 In Angular v15 esbuild support only

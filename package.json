@@ -10,7 +10,8 @@
     "test": "nx test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "build:shared-data-store": "nx build shared-data-store",
-    "esbuild": "node esbuild.config.js"
+    "esbuild": "node esbuild.config.js",
+    "storybook": "nx run storybook"
   },
   "private": true,
   "dependencies": {
