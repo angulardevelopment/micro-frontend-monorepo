@@ -3,7 +3,7 @@ import { ButtonComponent } from './button.component';
 
 // Meta information for Storybook, including title and argTypes for customization
 export default {
-  title: 'Components/Button',  // Changed the title to "Components/Button" for a better hierarchy
+  title: 'SharedComponents/Button',  // Changed the title to "Components/Button" for a better hierarchy
   component: ButtonComponent,
   argTypes: {
     backgroundColor: { control: 'color' },  // Allows users to change the background color of the button
@@ -11,6 +11,7 @@ export default {
     isActive: { control: 'boolean' },  // Boolean control for active state
     isHover: { control: 'boolean' },  // Boolean control for hover state
     variant: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },  // Select control for different button variants
+     clicked: { action: 'clicked' },  // Action control to log when the button is clicked
   },
 } as Meta;
 
@@ -41,7 +42,7 @@ Hover.args = {
 export const Active = Template.bind({});
 Active.args = {
   label: 'Active Button',
-  isActive: true,  // Simulating active state
+  isActive: false,  // Simulating active state
   variant: 'primary',
   backgroundColor: '#003366',  // A darker color for active state
 };
@@ -68,6 +69,11 @@ Tertiary.args = {
   backgroundColor: '#e0e0e0',  // Light background color for tertiary
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Disabled Button',
+  disabled: true,
+};
 
 import { storiesOf } from '@storybook/angular';
 

@@ -59,7 +59,7 @@ setTimeout(() => {
     // this.timer()s
 
     // this.fzfcsd();
-  this.timer()
+  // this.timer()
 
   // this.dfgdrbzd(100)s
   

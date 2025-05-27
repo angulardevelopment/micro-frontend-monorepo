@@ -1,2 +1,8 @@
-
-<button class="btn" [ngClass]="{ 'btn-hover': isHover, 'btn-active': isActive }">{{ label }}</button>
+  <button 
+  class="btn" 
+  [ngClass]="{ 'btn-hover': isHover, 'btn-active': isActive }"
+      [ngClass]="variant" 
+      [disabled]="disabled" 
+      (click)="handleClick()">
+      {{ label }}
+    </button>
