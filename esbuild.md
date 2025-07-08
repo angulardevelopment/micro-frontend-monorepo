@@ -68,3 +68,18 @@ In Angular v15 esbuild support only
     }
 
     Performance benchmark -> webpack or esbuild or vite
+
+    ESM default import
+We import a few CommonJS modules that do not support ES6 module
+
+This error can be fixed by adding this flag in tsconfig.json:
+
+  {
+    "compilerOptions": {
++     "esModuleInterop": true,
+    }
+  }
+And then altering all the default imports into something like this:
+
+-  import * as moment from 'moment';
++  import moment from 'moment';
