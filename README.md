@@ -21,6 +21,25 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 ### About the app
 it is a workspace which has multiple apps and library. Nx project
+shell is referred to as the host, and the micro frontends as remote.
+ng g @angular-architects/native-federation:init --project my-remote --type remote --port 4201
+ng g @angular-architects/native-federation:init --project my-shell --type dynamic-host --port 4200
+
+npx nx g @angular-architects/native-federation:init --project micro-frontend-monorepo --type remote --port 4201
+
+{
+  path: 'flights',
+  loadComponent: () =>
+    loadRemoteModule('mfe1', './Component').then((m) => m.AppComponent),
+},
+
+npx create-nx-workspace@latest
+npm i -g nx
+nx g app apps/miles
+nx build miles
+nx run-many -t build -p flights,miles
+nx connect-to-nx-cloud
+nx generate @nx/workspace:ci-workflow --ci=github
 
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
