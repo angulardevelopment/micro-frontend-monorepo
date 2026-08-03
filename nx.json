@@ -49,5 +49,6 @@
       "style": "css"
     }
   },
-  "defaultProject": "admin"
+  "defaultProject": "admin",
+  "analytics": true
 }

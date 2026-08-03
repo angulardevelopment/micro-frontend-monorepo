@@ -4,6 +4,7 @@ import { Component, ElementRef, Input } from '@angular/core';
   selector: 'test-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: false
 })
 export class AppComponent {
   title = 'admin';
