@@ -43,7 +43,28 @@ nx build miles
 nx run-many -t build -p flights,miles
 nx connect-to-nx-cloud
 nx generate @nx/workspace:ci-workflow --ci=github
+npx nx show projects
+admin
+dashboard
+demo
+gallery
+shell
 
+- ng serve demo  
+- ng serve admin 
+- ng s dashboard
+- ng s shell  
+ng s gallery
+
+shared data-store
+ngsrc - shell
+- Inside library we have gallery store.  
+- Inside apps we have - 
+  - Progress bar in admin app.
+  - In dashboard we have utilized three.js library and canvas.
+  - In demo app we have utilized zegocloud. 
+  - In gallery and shell app we have used library and ngrx state management.
+  
 ### Packages used
 -    "@ngrx/component-store": "~14.0.0",
 -    "@ngrx/effects": "~14.0.0",
